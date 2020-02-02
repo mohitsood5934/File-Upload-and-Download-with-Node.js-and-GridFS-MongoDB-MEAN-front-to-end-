@@ -1,0 +1,79 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <h5>Single File upload</h5>
+      <input type="file" name="image" ng2FileSelect [uploader]="uploader" />
+      <h5>Multiple File Upload</h5>
+
+      <input type="file" name="image" ng2FileSelect [uploader]="uploader" multiple />
+    </div>
+    <div class="col-md-9">
+      <h3>Upload Queue</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>File Name</th>
+            <th>Size</th>
+            <th>Progress</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of uploader.queue">
+            <td>{{ item?.file?.name }}</td>
+            <td *ngIf="uploader.options.isHTML5" nowrap>{{ item?.file?.size/1024/1024 | number:'.2' }} MB</td>
+            <td *ngIf="uploader.options.isHTML5">
+              <div class="progress" style="margin-bottom: 0;">
+                <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': item.progress + '%' }"></div>
+              </div>
+            </td>
+            <td>
+              <button mat-raised-button color="primary" (click)="item.upload();">
+                Upload
+              </button>
+
+              &nbsp;<button mat-raised-button color="warn" (click)="item.remove()">Remove</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button mat-raised-button color="primary" (click)="uploader.uploadAll()"
+        [disabled]="!uploader.getNotUploadedItems().length">Upload All</button>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-9">
+      <h4> Uploaded files:</h4>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>File Name</th>
+            <th>Action</th>
+            <th>Select file</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of fileList">
+            <td>{{ item.filename}}</td>
+            <td>
+              <button mat-raised-button color="primary" (click)="downloadFile(item._id,item.filename)">Download</button>
+              &nbsp;
+              <button mat-raised-button color="warn"     (click)="deleteFile(item._id,item.filename);getFiles(); ">Delete</button>
+             
+            </td>
+            <td>
+              <button mat-raised-button color="accent" (click)="addToDownloadBucket(item)">
+                Add
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h4>{{count}} item in download queue</h4>
+      <button mat-raised-button color="primary" (click)="downloadAllFiles()">
+        Download All
+      </button>
+    </div>
+  </div>
+</div>
