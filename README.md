@@ -139,3 +139,40 @@ async.waterfall([getName,getProfession,getCompany],function(err,result){
 })
 
 
+### error.js
+//throwing the error 
+//creating error objects and throwing and handle errors in Node.js
+//here we are modifying message property of the error object
+function manageError(){
+    try{
+        var a=1;
+        b++;
+        console.log(b)
+
+    }
+    catch(error){
+        error.message="variable is undefined, so the undefined can't be incremented"
+        console.log(error)
+        
+
+    }
+}
+manageError()
+
+// Creating Error Object 
+// using new Error(message)
+
+function divideNumber(a,b){
+    try{
+    var c=a/b
+    console.log(d)
+    }
+    catch(error){
+        var err = new Error("Reference Error")
+        console.log(err.message)
+        console.log(err.stack)
+    }
+
+}
+
+divideNumber(3,0)
