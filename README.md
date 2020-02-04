@@ -176,3 +176,36 @@ function divideNumber(a,b){
 }
 
 divideNumber(3,0)
+
+## references cp
+https://socket.io/docs/emit-cheatsheet
+https://www.sitepoint.com/javascript-command-line-interface-cli-node-js/
+
+>>>>>>xterm<<<<<
+https://github.com/xtermjs/xterm.js/
+https://xtermjs.org/
+https://github.com/xtermjs/xterm.js/
+>>>tty<<<<<<
+https://github.com/chjj/tty.js/
+
+>>>>>>>web  terminal<<<<<<
+https://medium.com/datadriveninvestor/deploy-web-app-using-node-js-and-custom-docker-in-google-cloud-643dd6a85b53
+
+>>>>>>>>tty<<<<<<<<
+
+https://github.com/chjj/tty.js/
+https://nodejs.org/api/tty.html
+
+
+>>>>ssh client
+https://hub.packtpub.com/making-simple-web-based-ssh-client-using-nodejs-and-socketio/
+
+>>>node terminal
+
+https://blog.risingstack.com/terminal-guide-for-nodejs/
+https://medium.com/datadriveninvestor/deploy-web-app-using-node-js-and-custom-docker-in-google-cloud-643dd6a85b53
+
+>>>>xterm<<<<<
+https://xtermjs.org/
+https://github.com/xtermjs/xterm.js/
+https://www.npmjs.com/package/xterm
